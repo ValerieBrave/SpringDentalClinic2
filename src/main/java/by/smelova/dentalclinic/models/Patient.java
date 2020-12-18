@@ -30,8 +30,6 @@ public class Patient {
     @JsonBackReference
     private Collection<Visit> patient_visits;
 
-    public Patient() {
-    }
 
     public Long getCardID() {
         return cardID;

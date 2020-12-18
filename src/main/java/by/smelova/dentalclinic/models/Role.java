@@ -19,7 +19,5 @@ public class Role {
     @JsonBackReference
     private Collection<Doctor> doctors;
 
-    public Role() {
-    }
 
 }
