@@ -1,5 +1,6 @@
 package by.smelova.dentalclinic.rest;
 
+import by.smelova.dentalclinic.aspect.NeedToLog;
 import by.smelova.dentalclinic.config.Mapper;
 import by.smelova.dentalclinic.dto.DoctorDto;
 import by.smelova.dentalclinic.models.Doctor;
@@ -29,6 +30,8 @@ public class DoctorController {
     public ResponseEntity GetDoctor(@RequestParam String login, @RequestParam String password) {
         return ResponseEntity.ok(doctorService.getByLoginAndPassword(login, password));
     }
+
+    @NeedToLog
     @PostMapping(value = "/doctor/add")
     public ResponseEntity AddDoctor(@RequestBody DoctorDto doctorDto) {
         Doctor doc = Mapper.map(doctorDto, Doctor.class);
@@ -43,6 +46,7 @@ public class DoctorController {
         return ResponseEntity.ok(doctorService.EditDoctor(doctorDto));
     }
 
+    @NeedToLog
     @DeleteMapping(value = "/doctor/delete/{id}")
     public ResponseEntity DeleteDoctor(@PathVariable Long id) {
         Doctor rc = doctorService.getById(id);
