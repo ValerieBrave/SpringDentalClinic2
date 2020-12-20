@@ -16,9 +16,9 @@ public class AbstractService {
         return (List) repository.findAll();
     }
 
-    public BasicModel getById(int id) {
-        return repository.findById((long) id).get();
-    }
+//    public BasicModel getById(int id) {
+//        return repository.findById((long) id).get();
+//    }
 
     public BasicModel save(BasicModel basicEntity) {
         return repository.save(basicEntity);

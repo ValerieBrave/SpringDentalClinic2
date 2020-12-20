@@ -1,5 +1,6 @@
 package by.smelova.dentalclinic.models;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Patient {
+public class Patient extends BasicModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cardID", nullable = false)
@@ -27,7 +28,7 @@ public class Patient {
     private String address;
 
     @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER)
-    @JsonBackReference
+    @JsonManagedReference(value = "visit->patient")
     private Collection<Visit> patient_visits;
 
 
@@ -49,6 +50,10 @@ public class Patient {
 
     public Collection<Visit> getPatient_visits() {
         return patient_visits;
+    }
+
+    public void setCardID(Long cardID) {
+        this.cardID = cardID;
     }
 
     public void setName(String name) {
