@@ -20,5 +20,7 @@ public class Role {
     @JsonManagedReference
     private Collection<Doctor> doctors;
 
-
+    public String getRole() {
+        return role;
+    }
 }

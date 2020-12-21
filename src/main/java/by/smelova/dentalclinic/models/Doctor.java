@@ -59,6 +59,10 @@ public class Doctor extends BasicModel {
         return doctor_visits;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
     public void setLogin(String login) {
         this.login = login;
     }

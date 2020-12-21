@@ -26,7 +26,7 @@ public class DoctorService extends AbstractService{
         super(repository);
     }
     public Doctor getById(Long id) {return doctorRepository.findByDoctorID(id);}
-    public List<Doctor> getByLogin(String login) {return doctorRepository.findDoctorByLogin(login);}
+    public Doctor getByLogin(String login) {return doctorRepository.findDoctorByLogin(login);}
     public Doctor getByLoginAndPassword(String login, String password) {return doctorRepository.findByLoginAndPassword(login, password);}
     public Doctor EditDoctor(DoctorDto doctorDto) {
         doctorRepository.UpdateDoctor(doctorDto.getDoctorID(), doctorDto.getRole(), doctorDto.getName(), doctorDto.getSpeciality(),

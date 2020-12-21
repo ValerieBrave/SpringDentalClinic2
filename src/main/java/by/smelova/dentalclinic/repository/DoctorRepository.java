@@ -13,7 +13,7 @@ import java.util.Optional;
 @Repository
 public interface DoctorRepository extends CrudRepository<Doctor,Integer> {
     Doctor findByDoctorID(Long id);
-    List<Doctor> findDoctorByLogin(String login);
+    Doctor findDoctorByLogin(String login);
     Doctor findByLoginAndPassword(String login, String password);
     @Query(value = "select * from Doctor where name like concat('%', ?1, '%'); ", nativeQuery = true)
     List<Doctor> findByName(String name);
