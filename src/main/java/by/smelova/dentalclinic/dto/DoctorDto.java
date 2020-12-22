@@ -5,7 +5,9 @@ import javax.validation.constraints.Size;
 
 public class DoctorDto {
     private Long doctorID;
+    @NotBlank(message = "Enter the role")
     private String role;
+    @NotBlank(message = "Enter the name")
     private String name;
     private String speciality;
     @NotBlank(message = "Enter the username")

@@ -6,6 +6,7 @@ import by.smelova.dentalclinic.dto.DoctorDto;
 import by.smelova.dentalclinic.models.Doctor;
 import by.smelova.dentalclinic.repository.RoleRepository;
 import by.smelova.dentalclinic.service.DoctorService;
+import by.smelova.dentalclinic.service.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,12 +17,19 @@ import javax.print.Doc;
 @RestController
 @RequestMapping(value = "/api/admin/doctor/")
 public class DoctorController {
-    @Autowired
+
     private DoctorService doctorService;
-    @Autowired
     private RoleRepository roleRepository;
-    @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+    private MailSenderService mailSenderService;
+
+    @Autowired
+    public DoctorController(DoctorService doctorService, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
+        this.doctorService = doctorService;
+        this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.mailSenderService = new MailSenderService();
+    }
 
     @GetMapping(value = "/all")
     public ResponseEntity GetDoctors() {return ResponseEntity.ok(doctorService.getAll());}
@@ -39,6 +47,7 @@ public class DoctorController {
         doc.setRole(roleRepository.getRoleByRole(doctorDto.getRole()));
         doc.setPassword(passwordEncoder.encode(doctorDto.getPassword()));
         doctorService.save(doc);
+        mailSenderService.Send("registration", "You registered on DentalClinic with username "+doctorDto.getLogin(), doctorDto.getEmail());
         return ResponseEntity.ok(doc);
     }
 
