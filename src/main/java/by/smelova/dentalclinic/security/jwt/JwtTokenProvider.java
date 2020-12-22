@@ -31,7 +31,7 @@ public class JwtTokenProvider {
 
 
     @Autowired
-    private JwtUserDetailsService userDetailsService;
+    private UserDetailsService userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -44,7 +44,7 @@ public class JwtTokenProvider {
 
     public String createToken(String username, Role user_role) {
         Claims claims = Jwts.claims().setSubject(username);
-        claims.put("role", user_role.getRole());
+        claims.put("roles", user_role.getRole());
 
         Date now = new Date();
         Date validity = new Date(now.getTime() + validityTime);

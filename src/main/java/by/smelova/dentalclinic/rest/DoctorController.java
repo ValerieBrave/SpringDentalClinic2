@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.print.Doc;
 
 @RestController
+@RequestMapping(value = "/api/admin/doctor/")
 public class DoctorController {
     @Autowired
     private DoctorService doctorService;
@@ -32,7 +33,7 @@ public class DoctorController {
     }
 
     @NeedToLog
-    @PostMapping(value = "/doctor/add")
+    @PostMapping(value = "add")
     public ResponseEntity AddDoctor(@RequestBody DoctorDto doctorDto) {
         Doctor doc = Mapper.map(doctorDto, Doctor.class);
         doc.setRole(roleRepository.getRoleByRole(doctorDto.getRole()));

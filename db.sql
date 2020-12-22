@@ -23,8 +23,12 @@ create table Doctor
 	name varchar(255),
 	speciality varchar(255),
 	login varchar(50),
-	password varchar(50),
+	password varchar(100),
 	email varchar(100)
 );
 drop table Role;
 create table Role (role varchar(20) primary key);
+
+insert into Doctor(role, name, speciality, login, password, email)
+values('ROLE_ADMIN', 'Judie Dash', 'administrator', 'JuDashxxx', 
+'$2y$12$1lHcM3JJdyRtrUbVtMPmSeT/V.X7THaFYUA931iV2AQkJ5bIummVq', 'jush@gamil.com');

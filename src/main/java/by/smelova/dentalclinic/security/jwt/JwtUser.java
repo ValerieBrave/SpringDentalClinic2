@@ -23,7 +23,7 @@ public class JwtUser implements UserDetails {
     @JsonIgnore
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return authorities;
     }
     @JsonIgnore
     @Override

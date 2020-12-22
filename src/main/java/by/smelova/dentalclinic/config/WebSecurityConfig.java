@@ -4,6 +4,7 @@ import by.smelova.dentalclinic.security.jwt.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -14,6 +15,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private final JwtTokenProvider jwtTokenProvider;
 
     private static final String LOGIN_ENDPOINT = "/auth/login";
+    private static final String ADMIN_ENDPOINT = "/api/admin/doctor/**";
+    private static final String USER_ENDPOINT = "/api/user/visit/**";
 
     @Autowired
     public WebSecurityConfig(JwtTokenProvider jwtTokenProvider) {
@@ -33,10 +36,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+
+
+                .antMatchers(ADMIN_ENDPOINT).hasRole("ADMIN")
+                .antMatchers(USER_ENDPOINT).hasRole("USER")
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
-                .antMatchers("").hasRole("ADMIN")
-                .antMatchers("").hasRole("USER")
-                .anyRequest().authenticated()
+                //.anyRequest().authenticated()
+                //.anyRequest().permitAll()
                 .and()
                 .apply(new JwtConfigurer(jwtTokenProvider));
     }
