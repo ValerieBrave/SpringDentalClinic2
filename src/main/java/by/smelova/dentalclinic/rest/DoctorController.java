@@ -23,17 +23,17 @@ public class DoctorController {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @GetMapping(value = "/doctors")
+    @GetMapping(value = "/all")
     public ResponseEntity GetDoctors() {return ResponseEntity.ok(doctorService.getAll());}
-    @GetMapping(value = "/doctor/bylogin")
+    @GetMapping(value = "/bylogin")
     public ResponseEntity GetDoctor(@RequestParam String login) {return ResponseEntity.ok(doctorService.getByLogin(login));}
-    @GetMapping(value = "/doctor/bycreds")
+    @GetMapping(value = "/bycreds")
     public ResponseEntity GetDoctor(@RequestParam String login, @RequestParam String password) {
         return ResponseEntity.ok(doctorService.getByLoginAndPassword(login, password));
     }
 
     @NeedToLog
-    @PostMapping(value = "add")
+    @PostMapping(value = "/add")
     public ResponseEntity AddDoctor(@RequestBody DoctorDto doctorDto) {
         Doctor doc = Mapper.map(doctorDto, Doctor.class);
         doc.setRole(roleRepository.getRoleByRole(doctorDto.getRole()));
@@ -42,13 +42,13 @@ public class DoctorController {
         return ResponseEntity.ok(doc);
     }
 
-    @PutMapping(value = "/doctor/edit")
+    @PutMapping(value = "/edit")
     public ResponseEntity EditDoctor(@RequestBody DoctorDto doctorDto) {
         return ResponseEntity.ok(doctorService.EditDoctor(doctorDto));
     }
 
     @NeedToLog
-    @DeleteMapping(value = "/doctor/delete/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity DeleteDoctor(@PathVariable Long id) {
         Doctor rc = doctorService.getById(id);
         if(rc.getDoctor_visits().size() == 0) {

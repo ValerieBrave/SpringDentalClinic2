@@ -1846,3 +1846,75 @@ by.smelova.dentalclinic.security.jwt.JwtAuthenticationException: JWT token has e
 2020-12-22 13:56:24.279  INFO 1968 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-12-22 13:56:24.294  INFO 1968 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-12-22 13:56:24.442  INFO 1968 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 19:58:54.955  INFO 8496 --- [main] b.smelova.dentalclinic.IntegrationTests  : Starting IntegrationTests using Java 1.8.0_231 on DESKTOP-K6FD3O4 with PID 8496 (started by valerie_brave in D:\JavaLabs\DentalClinic)
+2020-12-22 19:58:55.221  INFO 8496 --- [main] b.smelova.dentalclinic.IntegrationTests  : No active profile set, falling back to default profiles: default
+2020-12-22 19:59:01.734  INFO 8496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 19:59:02.109  INFO 8496 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 344 ms. Found 4 JPA repository interfaces.
+2020-12-22 19:59:06.281  INFO 8496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 19:59:08.548  INFO 8496 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 19:59:08.954  INFO 8496 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 19:59:09.251  INFO 8496 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 19:59:10.064  INFO 8496 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 19:59:10.798  INFO 8496 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-12-22 19:59:14.938  INFO 8496 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 19:59:15.016  INFO 8496 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 19:59:17.771  WARN 8496 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-22 19:59:21.552  WARN 8496 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-22 19:59:24.458  INFO 8496 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46b21632, org.springframework.security.web.context.SecurityContextPersistenceFilter@31183ee2, org.springframework.security.web.header.HeaderWriterFilter@16d4024e, org.springframework.security.web.authentication.logout.LogoutFilter@620572db, by.smelova.dentalclinic.security.jwt.JwtTokenFilter@476c137b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@24f90aff, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71eff6a3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@79144d0e, org.springframework.security.web.session.SessionManagementFilter@7805478c, org.springframework.security.web.access.ExceptionTranslationFilter@1bea7b0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e76a66f]
+2020-12-22 19:59:24.661  WARN 8496 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 19:59:25.676  INFO 8496 --- [main] b.smelova.dentalclinic.IntegrationTests  : Started IntegrationTests in 33.583 seconds (JVM running for 40.849)
+2020-12-22 19:59:26.114  INFO 8496 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-12-22 19:59:26.114  INFO 8496 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-12-22 19:59:26.114  INFO 8496 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2020-12-22 19:59:27.364  INFO 8496 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 19:59:27.379  INFO 8496 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 19:59:27.411  INFO 8496 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 20:00:31.226  INFO 5068 --- [main] b.smelova.dentalclinic.IntegrationTests  : Starting IntegrationTests using Java 1.8.0_231 on DESKTOP-K6FD3O4 with PID 5068 (started by valerie_brave in D:\JavaLabs\DentalClinic)
+2020-12-22 20:00:31.260  INFO 5068 --- [main] b.smelova.dentalclinic.IntegrationTests  : No active profile set, falling back to default profiles: default
+2020-12-22 20:00:40.563  INFO 5068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 20:00:40.894  INFO 5068 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 294 ms. Found 4 JPA repository interfaces.
+2020-12-22 20:00:45.133  INFO 5068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 20:00:47.322  INFO 5068 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 20:00:47.794  INFO 5068 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 20:00:48.126  INFO 5068 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 20:00:49.154  INFO 5068 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 20:00:50.272  INFO 5068 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-12-22 20:00:55.166  INFO 5068 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 20:00:55.213  INFO 5068 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 20:00:58.013  WARN 5068 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-22 20:01:01.263  WARN 5068 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-22 20:01:04.435  INFO 5068 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ea48b2e, org.springframework.security.web.context.SecurityContextPersistenceFilter@736788b, org.springframework.security.web.header.HeaderWriterFilter@7252bdb, org.springframework.security.web.authentication.logout.LogoutFilter@49f2646, by.smelova.dentalclinic.security.jwt.JwtTokenFilter@72c704f1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@460e5ffe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5358c8fa, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@76f9e000, org.springframework.security.web.session.SessionManagementFilter@735988cf, org.springframework.security.web.access.ExceptionTranslationFilter@63f3366a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c62d2ad]
+2020-12-22 20:01:04.669  WARN 5068 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 20:01:04.997  INFO 5068 --- [main] b.smelova.dentalclinic.IntegrationTests  : Started IntegrationTests in 37.385 seconds (JVM running for 46.395)
+2020-12-22 20:01:05.310  INFO 5068 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-12-22 20:01:05.310  INFO 5068 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-12-22 20:01:05.325  INFO 5068 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 15 ms
+2020-12-22 20:01:06.858  INFO 5068 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 20:01:06.858  INFO 5068 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 20:01:06.889  INFO 5068 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-12-22 20:14:14.389  INFO 9320 --- [main] b.smelova.dentalclinic.IntegrationTests  : Starting IntegrationTests using Java 1.8.0_231 on DESKTOP-K6FD3O4 with PID 9320 (started by valerie_brave in D:\JavaLabs\DentalClinic)
+2020-12-22 20:14:14.729  INFO 9320 --- [main] b.smelova.dentalclinic.IntegrationTests  : No active profile set, falling back to default profiles: default
+2020-12-22 20:14:21.147  INFO 9320 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-22 20:14:21.489  INFO 9320 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 305 ms. Found 4 JPA repository interfaces.
+2020-12-22 20:14:25.594  INFO 9320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-22 20:14:27.682  INFO 9320 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-22 20:14:28.134  INFO 9320 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-22 20:14:28.464  INFO 9320 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.25.Final
+2020-12-22 20:14:29.191  INFO 9320 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-12-22 20:14:29.888  INFO 9320 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.SQLServer2012Dialect
+2020-12-22 20:14:33.655  INFO 9320 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-22 20:14:33.695  INFO 9320 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 20:14:36.485  WARN 9320 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-22 20:14:39.688  WARN 9320 --- [main] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-22 20:14:42.505  INFO 9320 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3af39e7b, org.springframework.security.web.context.SecurityContextPersistenceFilter@5bad555b, org.springframework.security.web.header.HeaderWriterFilter@454e9d65, org.springframework.security.web.authentication.logout.LogoutFilter@78743dd8, by.smelova.dentalclinic.security.jwt.JwtTokenFilter@4f6ff62, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@71eff6a3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6294e4a6, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1c62d2ad, org.springframework.security.web.session.SessionManagementFilter@26679788, org.springframework.security.web.access.ExceptionTranslationFilter@6f9a3325, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4805069b]
+2020-12-22 20:14:42.725  WARN 9320 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2020-12-22 20:14:43.022  INFO 9320 --- [main] b.smelova.dentalclinic.IntegrationTests  : Started IntegrationTests in 32.389 seconds (JVM running for 42.356)
+2020-12-22 20:14:43.373  INFO 9320 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-12-22 20:14:43.375  INFO 9320 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-12-22 20:14:43.379  INFO 9320 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2020-12-22 20:14:45.205  INFO 9320 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2020-12-22 20:14:45.206  INFO 9320 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2020-12-22 20:14:45.209  INFO 9320 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2020-12-22 20:14:45.525  INFO 9320 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-12-22 20:14:45.539  INFO 9320 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-12-22 20:14:45.553  INFO 9320 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
