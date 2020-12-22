@@ -7,7 +7,12 @@ import by.smelova.dentalclinic.models.Doctor;
 import by.smelova.dentalclinic.repository.RoleRepository;
 import by.smelova.dentalclinic.service.DoctorService;
 import by.smelova.dentalclinic.service.MailSenderService;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -34,10 +39,24 @@ public class DoctorController {
     @GetMapping(value = "/all")
     public ResponseEntity GetDoctors() {return ResponseEntity.ok(doctorService.getAll());}
     @GetMapping(value = "/bylogin")
-    public ResponseEntity GetDoctor(@RequestParam String login) {return ResponseEntity.ok(doctorService.getByLogin(login));}
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200"),
+            @ApiResponse(responseCode = "404")})
+    public ResponseEntity GetDoctor(@RequestParam String login) {
+        Doctor rc = doctorService.getByLogin(login);
+        if(rc != null)
+        return ResponseEntity.ok(rc);
+        else return ResponseEntity.status(404).build();
+    }
     @GetMapping(value = "/bycreds")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200"),
+            @ApiResponse(responseCode = "404")})
     public ResponseEntity GetDoctor(@RequestParam String login, @RequestParam String password) {
-        return ResponseEntity.ok(doctorService.getByLoginAndPassword(login, password));
+        Doctor rc = doctorService.getByLoginAndPassword(login, password);
+        if(rc != null)
+            return ResponseEntity.ok(rc);
+        else return ResponseEntity.status(404).build();
     }
 
     @NeedToLog
@@ -57,14 +76,19 @@ public class DoctorController {
     }
 
     @NeedToLog
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200"),
+            @ApiResponse(responseCode = "403"),
+            @ApiResponse(responseCode = "404")})
     @DeleteMapping(value = "/delete/{id}")
     public ResponseEntity DeleteDoctor(@PathVariable Long id) {
         Doctor rc = doctorService.getById(id);
-        if(rc.getDoctor_visits().size() == 0) {
-            doctorService.deleteById(Math.toIntExact(id));
-            return ResponseEntity.ok(rc);
-        } else return ResponseEntity.status(403).build();
-
+        if(rc != null) {
+            if(rc.getDoctor_visits().size() == 0) {
+                doctorService.deleteById(Math.toIntExact(id));
+                return ResponseEntity.ok(rc);
+            } else return ResponseEntity.status(403).build();
+        } else return ResponseEntity.status(404).build();
 
     }
 }

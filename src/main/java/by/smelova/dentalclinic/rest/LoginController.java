@@ -5,6 +5,8 @@ import by.smelova.dentalclinic.dto.DoctorDto;
 import by.smelova.dentalclinic.models.Doctor;
 import by.smelova.dentalclinic.security.jwt.JwtTokenProvider;
 import by.smelova.dentalclinic.service.DoctorService;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -35,6 +37,9 @@ public class LoginController {
     }
 
     @PostMapping(value = "/auth/login")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200"),
+            @ApiResponse(responseCode = "403")})
     public ResponseEntity login(@RequestBody AuthRequestDto authRequestDto) {
         try {
             String login = authRequestDto.getLogin();
